@@ -57,7 +57,7 @@
        document.getElementById("deneme").innerHTML="Bigger Then Your guess ";
     }else if(rndSayi<sayi){
         document.getElementById("deneme").innerHTML="Smaller Then Your guess";
-    }else{
+    }else if(rndSayi==sayi){
         if(sayac>9){
             score=10;
         }else if(sayac>7){
@@ -71,10 +71,12 @@
             score=90;
         }else if(sayac>0){
             score=100;
-        }else{
-        document.getElementById("deneme").innerHTML="Score: "Just Number Please";
         }
+        
+        
         document.getElementById("deneme").innerHTML="Score: "+score+"          Guess Count: "+sayac;
+    }else{
+        document.getElementById("deneme").innerHTML="Score: "Just Number Please";
     }
     }
     function againPlay(){
