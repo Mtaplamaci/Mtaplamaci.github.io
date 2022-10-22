@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Guess Game</title>
+   
+</head>
+<body>
+
+    <div class="login-box">
+        <h2>Guess Game</h2>
+        <form>
+          <div class="user-box">
+            <input type="text" id="sayi" name="" required="">
+            <label>Guess The Secret Number &nbsp; 0 To 100</label>
+          </div>
+          <div class="user-box">
+            
+            <label style="color:#03e9f4; ;" id="deneme"></label>
+            <br>
+          </div>
+         
+          <a onclick="guessGame()">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Guess
+          </a>
+          <a onclick="againPlay()">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Play Again
+          </a>
+         
+        </form>
+      </div>
+
+
+
+
+
+
+    <script>
+        var sayac = 1;
+        var rndSayi = Math.floor(Math.random() * 101);
+        var score=0;
+        function guessGame(){
+            sayac++;
+       
+       var sayi=document.getElementById("sayi").value;
+       if(rndSayi>sayi){
+       document.getElementById("deneme").innerHTML="Bigger Then Your guess ";
+    }else if(rndSayi<sayi){
+        document.getElementById("deneme").innerHTML="Smaller Then Your guess";
+    }else{
+        if(sayac>9){
+            score=10;
+        }else if(sayac>7){
+            score=30;
+        }
+        else if(sayac>5){
+            score=50;
+        }else if(sayac>3){
+            score=70;
+        }else if(sayac>2){
+            score=90;
+        }else if(sayac>0){
+            score=100;
+        }
+        document.getElementById("deneme").innerHTML="Score: "+score+"          Guess Count: "+sayac;
+    }
+    }
+    function againPlay(){
+        window.location.reload();
+    }
+    </script>
+</body>
+</html>
